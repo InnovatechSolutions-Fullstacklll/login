@@ -3,6 +3,7 @@ package com.Inovatech.mslogin.service;
 import com.Inovatech.mslogin.client.RegisterClient;
 import com.Inovatech.mslogin.dto.LoginRequest;
 import com.Inovatech.mslogin.dto.LoginResponse;
+import com.Inovatech.mslogin.dto.UserAuditResponse;
 import com.Inovatech.mslogin.dto.UserResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -66,5 +67,13 @@ public class LoginService {
                 .token(token)
                 .message("Login exitoso")
                 .build();
+    }
+
+    public List<UserAuditResponse> getUsers() {
+
+        return registerClient.getUsers()
+                .stream()
+                .map(user -> new UserAuditResponse(user.getEmail()))
+                .toList();
     }
 }

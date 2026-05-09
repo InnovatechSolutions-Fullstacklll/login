@@ -2,12 +2,13 @@ package com.Inovatech.mslogin.controller;
 
 import com.Inovatech.mslogin.dto.LoginRequest;
 import com.Inovatech.mslogin.dto.LoginResponse;
+import com.Inovatech.mslogin.dto.UserAuditResponse;
 import com.Inovatech.mslogin.service.LoginService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/login")
@@ -22,5 +23,9 @@ public class LoginController {
     ) {
 
         return loginService.login(request);
+    }
+    @GetMapping("/users")
+    public ResponseEntity<List<UserAuditResponse>> getUsers() {
+        return ResponseEntity.ok(loginService.getUsers());
     }
 }
