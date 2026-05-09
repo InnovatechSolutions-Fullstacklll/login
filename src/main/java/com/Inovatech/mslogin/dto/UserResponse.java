@@ -1,7 +1,5 @@
 package com.Inovatech.mslogin.dto;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,12 +9,13 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class LoginRequest {
+public class UserResponse {
 
-    @Email(message = "Email inválido")
-    @NotBlank(message = "Email obligatorio")
+    private Long id;
+
+    private String username;
+
     private String email;
 
-    @NotBlank(message = "contraseña obligatoria")
     private String password;
 }

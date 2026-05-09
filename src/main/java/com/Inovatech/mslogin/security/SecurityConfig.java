@@ -10,17 +10,25 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain securityFilterChain(
+            HttpSecurity http
+    ) throws Exception {
 
         http
+
                 .csrf(csrf -> csrf.disable())
+
                 .authorizeHttpRequests(auth -> auth
-                        .anyRequest().permitAll()
+
+                        .requestMatchers(
+                                "/api/login/**"
+                        ).permitAll()
+
+                        .anyRequest().authenticated()
                 )
+
                 .httpBasic(Customizer.withDefaults());
 
         return http.build();
     }
 }
-
-//ESTO ES PARA DESACTIVAR LA SEGURIDAD, ES PARA LAS PRUEBAS NOMAS, BORRAR SI QUIEREN HACER PRUEBAS SERIAS

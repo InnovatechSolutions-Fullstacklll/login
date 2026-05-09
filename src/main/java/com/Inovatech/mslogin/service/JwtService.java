@@ -13,7 +13,7 @@ import java.util.Date;
 public class JwtService {
 
     private static final String SECRET_KEY =
-            "mi_clave_super_secreta_para_microservicios_2026";
+            "12345678912345678912345678912345";
 
     private final SecretKey key = Keys.hmacShaKeyFor(
             SECRET_KEY.getBytes(StandardCharsets.UTF_8)

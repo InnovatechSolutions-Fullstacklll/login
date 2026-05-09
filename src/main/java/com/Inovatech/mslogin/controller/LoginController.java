@@ -3,7 +3,6 @@ package com.Inovatech.mslogin.controller;
 import com.Inovatech.mslogin.dto.LoginRequest;
 import com.Inovatech.mslogin.dto.LoginResponse;
 import com.Inovatech.mslogin.service.LoginService;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,8 +18,9 @@ public class LoginController {
 
     @PostMapping
     public LoginResponse login(
-            @Valid @RequestBody LoginRequest request
+            @RequestBody LoginRequest request
     ) {
+
         return loginService.login(request);
     }
 }
