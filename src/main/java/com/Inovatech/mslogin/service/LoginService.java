@@ -47,8 +47,8 @@ public class LoginService {
 
         boolean passwordMatches =
                 passwordEncoder.matches(
-                        request.getPassword(),
-                        user.getPassword()
+                        request.getClave1(),
+                        user.getClave1()
                 );
 
         if(!passwordMatches) {

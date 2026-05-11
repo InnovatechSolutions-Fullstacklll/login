@@ -8,7 +8,7 @@ import java.util.List;
 
 @FeignClient(
         name = "register-service",
-        url = "http://localhost:8080"
+        url = "http://localhost:9091"
 )
 public interface RegisterClient {
 

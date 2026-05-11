@@ -13,9 +13,9 @@ public class UserResponse {
 
     private Long id;
 
-    private String username;
+    private String nombre;
 
     private String email;
 
-    private String password;
+    private String clave1;
 }

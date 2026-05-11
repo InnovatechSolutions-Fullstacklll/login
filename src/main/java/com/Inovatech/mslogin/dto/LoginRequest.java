@@ -18,5 +18,5 @@ public class LoginRequest {
     private String email;
 
     @NotBlank(message = "contraseña obligatoria")
-    private String password;
+    private String clave1;
 }

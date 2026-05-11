@@ -42,7 +42,7 @@ public class LoginControllerTest {
 
         user.setEmail("admin@test.com");
 
-        user.setPassword(
+        user.setClave1(
                 passwordEncoder.encode("1234")
         );
 
@@ -53,7 +53,7 @@ public class LoginControllerTest {
 
         request.setEmail("admin@test.com");
 
-        request.setPassword("1234");
+        request.setClave1("1234");
 
         mockMvc.perform(
                         post("/api/login")
