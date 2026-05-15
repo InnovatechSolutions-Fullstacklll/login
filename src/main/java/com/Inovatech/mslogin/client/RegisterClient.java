@@ -12,6 +12,6 @@ import java.util.List;
 )
 public interface RegisterClient {
 
-    @GetMapping("/api/register/users")
+    @GetMapping("/api/register/user")
     List<UserResponse> getUsers();
 }

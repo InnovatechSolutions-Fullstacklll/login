@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/login")
+@RequestMapping("/api/login/auth")
 @RequiredArgsConstructor
 public class LoginController {
 
@@ -21,10 +21,10 @@ public class LoginController {
     public LoginResponse login(
             @RequestBody LoginRequest request
     ) {
-
+        System.out.println(request);
         return loginService.login(request);
     }
-    @GetMapping("/users")
+    @GetMapping("/user")
     public ResponseEntity<List<UserAuditResponse>> getUsers() {
         return ResponseEntity.ok(loginService.getUsers());
     }
