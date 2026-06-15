@@ -17,6 +17,15 @@ public class LoginController {
 
     private final LoginService loginService;
 
+    /*@PostMapping
+    public LoginResponse login(@RequestBody LoginRequest request) {
+
+        System.out.println("EMAIL: " + request.getEmail());
+        System.out.println("CLAVE1: " + request.getClave1());
+
+        return loginService.login(request);
+    }*/
+
     @PostMapping
     public LoginResponse login(
             @RequestBody LoginRequest request
